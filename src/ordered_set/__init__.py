@@ -10,7 +10,6 @@ def set_and(self, other):
     ).keys())
 
 def set_or(self, other):
-    print ("YES")
     return type(self)(dict.fromkeys(
         (
             *self,
@@ -37,8 +36,3 @@ class OrderedSet(tuple):
 
     def __repr__(self):
         return f"{type(self).__name__}({super().__repr__()})"
-
-if __name__=="__main__":
-    a = OrderedSet((2,1,3,5,4,5,9))
-    b = OrderedSet((2,1,3,1,1,1,6,7,8,9))
-    print (a ^ b)
