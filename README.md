@@ -26,4 +26,7 @@ An OrderedSet preserves the order.
 
 Supported operations: `&`, `|` and `^`.
 
-An OrderedSet can contain mutable items, but is not recommended. A `TypeError` will be raised upon any logical operators involving an OrderedSet with a mutable item.
+## Notes
+- While an `OrderedSet` behaves like a `set`, it is NOT an subclass of `set`. `isinstance(OrderedSet())` will return `False`.
+- An OrderedSet can contain mutable items, but is not recommended. A `TypeError` will be raised upon any logical operators involving an OrderedSet with a mutable item.
+- All logical operations between a `set` and an `OrderedSet` needs to be operated on the `OrderedSet`, i.e. `OrderedSet([...]) & set([...])` instead of `set([...]) & OrderedSet([...])`. The latter will raise a `TypeError`.
