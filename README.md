@@ -25,3 +25,5 @@ OrderedSet((1, 2, 3, 4, 9999999, 16))
 An OrderedSet preserves the order.
 
 Supported operations: `&`, `|` and `^`.
+
+An OrderedSet can contain mutable items, but is not recommended. A `TypeError` will be raised upon any logical operators involving an OrderedSet with a mutable item.
